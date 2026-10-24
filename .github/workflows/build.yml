@@ -1,4 +1,5 @@
 name: Build iOS IPA
+name: Build iOS IPA
 
 on:
   push:
@@ -10,7 +11,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Tự động giải nén mã nguồn từ iOS26_2.zip
       - name: Extract source code
@@ -43,7 +44,7 @@ jobs:
           zip -r ThreeOneOSFive.ipa Payload
 
       - name: Upload IPA Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ThreeOneOSFive-IPA
           path: ThreeOneOSFive.ipa
